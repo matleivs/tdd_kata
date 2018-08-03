@@ -14,7 +14,7 @@ String determineGameResult(char[] cardsOfPlayer1, char[] cardsOfPlayer2)
 #3
 Encryptor Kata:
 Encryptor legacy code kata from Emily Bache
-@see <a href="https://github.com/emilybache/Encryptor-Refactoring-Kata">
+see https://github.com/emilybache/Encryptor-Refactoring-Kata
   
 #4 
 Search Engine - Parse query sentences - Part I:
