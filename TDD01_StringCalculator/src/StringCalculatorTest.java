@@ -13,4 +13,9 @@ public class StringCalculatorTest {
     public void test() {
         new StringCalculator();
     }
+
+    @Test
+    public void test1() {
+        new StringCalculator().calculate("0");
+    }
 }
