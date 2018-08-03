@@ -10,12 +10,12 @@ import org.junit.Test;
 public class StringCalculatorTest {
 
     @Test
-    public void test() {
+    public void create_instance() {
         new StringCalculator();
     }
 
     @Test
-    public void test1() {
+    public void invoke_calculate_method() {
         new StringCalculator().calculate("0");
     }
 }
