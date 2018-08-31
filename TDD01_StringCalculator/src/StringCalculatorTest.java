@@ -1,9 +1,11 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * #1 Kata “String Calculator”:
  * <p>
- * Erstellt eine Funktion, die einen String entgegennimmt und das Ergebnis der darin erhaltenen Rechnung zurückgibt.
+ * Erstellt eine Funktion, die einen String entgegennimmt und
+ * das Ergebnis der darin erhaltenen Rechnung zurückgibt.
  * Unterstützt werden sollen die vier Grundrechenarten (+,-,/,*) für Integerwerte.
  * Die Signatur sähe so aus: Number calculate(String expression)
  */
@@ -16,6 +18,8 @@ public class StringCalculatorTest {
 
     @Test
     public void invoke_calculate_method() {
-        new StringCalculator().calculate("0");
+        int actual = new StringCalculator().calculate("0");
+
+        Assert.assertEquals(0, actual);
     }
 }
