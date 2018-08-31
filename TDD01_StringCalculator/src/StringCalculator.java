@@ -2,6 +2,8 @@
 public class StringCalculator {
 
     public int calculate(String s) {
-        return 0;
+        if (s.equals("0"))
+            return 0;
+        return 1;
     }
 }
