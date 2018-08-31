@@ -6,8 +6,23 @@ import org.junit.Test;
  * <p>
  * Erstellt eine Funktion, die einen String entgegennimmt und
  * das Ergebnis der darin erhaltenen Rechnung zurückgibt.
- * Unterstützt werden sollen die vier Grundrechenarten (+,-,/,*) für Integerwerte.
+ * Unterstützt werden sollen die vier Grundrechenarten (+,-,/,*) für Integerwerte (Annahme: Werte < 0 inkl.).
  * Die Signatur sähe so aus: Number calculate(String expression)
+ *
+ * 0 -> 0
+ * 1 -> 1
+ * -1 -> -1
+ * 12 -> 12
+ * -23 -> -23
+ *
+ * 0+0 -> 0
+ * 0+1 -> 1
+ * 1+0 -> 1
+ * 1+0 -> 0+1
+ * 0+-1 -> -1
+ * -1+0 -> -1
+ * -1 + -1 = -2
+ *
  */
 public class StringCalculatorTest {
 
