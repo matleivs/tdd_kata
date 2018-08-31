@@ -44,4 +44,11 @@ public class StringCalculatorTest {
         Assert.assertEquals(1, actual);
     }
 
+    @Test
+    public void test_input_negative1_return_negative1() {
+        int actual = new StringCalculator().calculate("-1");
+
+        Assert.assertEquals(-1, actual);
+    }
+
 }
