@@ -17,7 +17,7 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void invoke_calculate_method() {
+    public void test_input_zero_return_0() {
         int actual = new StringCalculator().calculate("0");
 
         Assert.assertEquals(0, actual);
