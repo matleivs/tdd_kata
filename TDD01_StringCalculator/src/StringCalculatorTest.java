@@ -9,8 +9,7 @@ import org.junit.Test;
  * Unterstützt werden sollen die vier Grundrechenarten (+,-,/,*) für Integerwerte (Annahme: Werte < 0 inkl.).
  * Die Signatur sähe so aus: Number calculate(String expression)
  *
- * 0 -> 0
- * 1 -> 1
+ *
  * -1 -> -1
  * 12 -> 12
  * -23 -> -23
@@ -44,5 +43,5 @@ public class StringCalculatorTest {
 
         Assert.assertEquals(1, actual);
     }
-    
+
 }
