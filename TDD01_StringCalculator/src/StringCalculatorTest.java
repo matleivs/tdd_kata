@@ -37,4 +37,12 @@ public class StringCalculatorTest {
 
         Assert.assertEquals(0, actual);
     }
+
+    @Test
+    public void test_input_1_return_1() {
+        int actual = new StringCalculator().calculate("1");
+
+        Assert.assertEquals(1, actual);
+    }
+    
 }
