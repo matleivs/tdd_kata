@@ -8,12 +8,11 @@ import org.junit.Test;
  * das Ergebnis der darin erhaltenen Rechnung zurückgibt.
  * Unterstützt werden sollen die vier Grundrechenarten (+,-,/,*) für Integerwerte (Annahme: Werte < 0 inkl.).
  * Die Signatur sähe so aus: Number calculate(String expression)
- *
- *
- * -1 -> -1
+ * <p>
+ * <p>
  * 12 -> 12
  * -23 -> -23
- *
+ * <p>
  * 0+0 -> 0
  * 0+1 -> 1
  * 1+0 -> 1
@@ -21,34 +20,28 @@ import org.junit.Test;
  * 0+-1 -> -1
  * -1+0 -> -1
  * -1 + -1 = -2
- *
  */
 public class StringCalculatorTest {
 
-    @Test
-    public void create_instance() {
-        new StringCalculator();
-    }
 
     @Test
     public void test_input_zero_return_0() {
-        int actual = new StringCalculator().calculate("0");
-
-        Assert.assertEquals(0, actual);
+        test_calculate("0", 0);
     }
 
     @Test
     public void test_input_1_return_1() {
-        int actual = new StringCalculator().calculate("1");
-
-        Assert.assertEquals(1, actual);
+        test_calculate("1", 1);
     }
 
     @Test
     public void test_input_negative1_return_negative1() {
-        int actual = new StringCalculator().calculate("-1");
-
-        Assert.assertEquals(-1, actual);
+        test_calculate("-1", -1);
     }
 
+    private void test_calculate(String input, int expected) {
+        int actual = new StringCalculator().calculate(input);
+
+        Assert.assertEquals(expected, actual);
+    }
 }
