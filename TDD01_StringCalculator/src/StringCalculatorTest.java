@@ -86,6 +86,10 @@ public class StringCalculatorTest {
         assert_calculate("1*2", 2);
     }
 
+    @Test
+    public void input_1_minus_1_return_0() {
+        assert_calculate("1-1", 0);
+    }
 
     @Test
     public void input_1_multiply_3_return_3() {
