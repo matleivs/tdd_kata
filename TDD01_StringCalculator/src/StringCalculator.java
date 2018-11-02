@@ -8,10 +8,7 @@ public class StringCalculator {
             int secondOperand = Integer.parseInt(s.substring(indexOfPlus));
             return firstOperand + secondOperand;
         }
-        try {
-            return Integer.parseInt(s);
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException();
-        }
+
+        return Integer.parseInt(s);
     }
 }
