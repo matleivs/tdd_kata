@@ -28,7 +28,7 @@ public class StringCalculator {
                     if (indexOfSlash != -1) {
                         int firstOperand = Integer.parseInt(s.substring(0, indexOfSlash));
                         int secondOperand = Integer.parseInt(s.substring(indexOfSlash + 1));
-                        return firstOperand - secondOperand;
+                        return firstOperand / secondOperand;
                     } else {
                         return Integer.parseInt(s);
                     }
