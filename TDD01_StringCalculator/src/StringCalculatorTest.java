@@ -22,69 +22,73 @@ public class StringCalculatorTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void input_letters_throw_IllegalArgumentException() {
-        new StringCalculator().calculate("abc");
+        calculate("abc");
     }
 
 
     @Test(expected = IllegalArgumentException.class)
     public void input_second_operand_is_missing_throw_IllegalArgumentException() {
-        new StringCalculator().calculate("1+");
+        calculate("1+");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void input_first_operand_is_missing_throw_IllegalArgumentException() {
-        new StringCalculator().calculate("+1");
+        calculate("+1");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void input_first_and_second_operands_are_missing_throw_IllegalArgumentException() {
-        new StringCalculator().calculate("+");
+        calculate("+");
     }
 
     @Test
     public void input_0_return_0() {
-        test_calculate("0", 0);
+        assert_calculate("0", 0);
     }
 
     @Test
     public void input_1_return_1() {
-        test_calculate("1", 1);
+        assert_calculate("1", 1);
     }
 
     @Test
     public void input_negative1_return_negative1() {
-        test_calculate("-1", -1);
+        assert_calculate("-1", -1);
     }
 
     @Test
     public void input_two_digits_return_two_digits() {
-        test_calculate("12", 12);
+        assert_calculate("12", 12);
     }
 
     @Test
     public void input_0_plus_0_return_0() {
-        test_calculate("0+0", 0);
+        assert_calculate("0+0", 0);
     }
 
     @Test
     public void input_0_plus_1_return_1() {
-        test_calculate("0+1", 1);
+        assert_calculate("0+1", 1);
     }
 
     @Test
     public void input_1_plus_0_return_1() {
-        test_calculate("1+0", 1);
+        assert_calculate("1+0", 1);
     }
 
     @Test
     public void input_1_multiply_1_return_1() {
-        test_calculate("1*1", 1);
+        assert_calculate("1*1", 1);
     }
 
 
-    private void test_calculate(String input, int expected) {
-        int actual = new StringCalculator().calculate(input);
+    private void assert_calculate(String input, int expected) {
+        int actual = calculate(input);
 
         Assert.assertEquals(expected, actual);
+    }
+
+    private int calculate(String expression) {
+        return new StringCalculator().calculate(expression);
     }
 }
