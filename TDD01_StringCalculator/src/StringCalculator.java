@@ -4,30 +4,20 @@ public class StringCalculator {
     public int calculate(String s) {
 
         int indexOfOperator = s.indexOf("+");
-        if (indexOfOperator != -1) {
-
-            return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator));
-        } else {
+        if (indexOfOperator == -1) {
             indexOfOperator = s.indexOf("*");
-
-            if (indexOfOperator != -1) {
-                return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
-            } else {
+            if (indexOfOperator == -1) {
                 indexOfOperator = s.indexOf("-");
-
-                if (indexOfOperator != -1 && indexOfOperator != 0) {
-                    return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
-                } else {
+                if (indexOfOperator == -1 || indexOfOperator == 0) {
                     indexOfOperator = s.indexOf("/");
-
-                    if (indexOfOperator != -1) {
-                        return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
-                    } else {
+                    if (indexOfOperator == -1) {
                         return Integer.parseInt(s);
                     }
                 }
             }
         }
+
+        return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
     }
 
     private int calculate(String firstOperand, char operator, String secondOperand) {
