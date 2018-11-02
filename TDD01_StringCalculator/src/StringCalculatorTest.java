@@ -87,6 +87,12 @@ public class StringCalculatorTest {
     }
 
 
+    @Test
+    public void input_1_multiply_3_return_3() {
+        assert_calculate("1*3", 3);
+    }
+
+
     private void assert_calculate(String input, int expected) {
         int actual = calculate(input);
 
