@@ -57,6 +57,11 @@ public class StringCalculatorTest {
     }
 
     @Test
+    public void input_negative2_return_negative2() {
+        assert_calculate("-2", -2);
+    }
+
+    @Test
     public void input_two_digits_return_two_digits() {
         assert_calculate("12", 12);
     }
