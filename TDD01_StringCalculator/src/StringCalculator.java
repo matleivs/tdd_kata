@@ -2,6 +2,11 @@
 public class StringCalculator {
 
     public int calculate(String s) {
-        return Integer.parseInt(s);
+
+        try {
+            return Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 }
