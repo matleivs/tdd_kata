@@ -106,6 +106,11 @@ public class StringCalculatorTest {
         assert_calculate("4/2", 2);
     }
 
+    @Test
+    public void input_6_divided_by_3_return_2() {
+        assert_calculate("6/3", 2);
+    }
+
     private void assert_calculate(String input, int expected) {
         int actual = calculate(input);
 
