@@ -16,7 +16,15 @@ public class StringCalculator {
                 int secondOperand = Integer.parseInt(s.substring(indexOfStar + 1));
                 return firstOperand * secondOperand;
             } else {
-                return Integer.parseInt(s);
+                int indexOfMinus = s.indexOf("-");
+
+                if (indexOfMinus != -1 && !s.equals("-1")) {
+                    int firstOperand = Integer.parseInt(s.substring(0, indexOfMinus));
+                    int secondOperand = Integer.parseInt(s.substring(indexOfMinus + 1));
+                    return firstOperand - secondOperand;
+                } else {
+                    return Integer.parseInt(s);
+                }
             }
         }
     }
