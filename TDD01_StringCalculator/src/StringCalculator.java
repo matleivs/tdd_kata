@@ -2,10 +2,12 @@
 public class StringCalculator {
 
     public int calculate(String s) {
-        if (s.equals("0+1")) return 1;
-        else if (s.equals("1+0")) return 1;
-        else if (s.equals("0+0")) return 0;
-
+        int indexOfPlus = s.indexOf("+");
+        if (indexOfPlus != -1) {
+            int firstOperand = Integer.parseInt(s.substring(0, indexOfPlus));
+            int secondOperand = Integer.parseInt(s.substring(indexOfPlus));
+            return firstOperand + secondOperand;
+        }
         try {
             return Integer.parseInt(s);
         } catch (NumberFormatException e) {
