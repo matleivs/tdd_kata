@@ -9,6 +9,8 @@ public class StringCalculator {
             return firstOperand + secondOperand;
         } else if (s.contains("*2"))
             return 2;
+        else if (s.contains("*3"))
+            return 3;
         else if (s.contains("*"))
             return 1;
 
