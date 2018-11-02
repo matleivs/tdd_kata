@@ -5,22 +5,23 @@ public class StringCalculator {
 
         int indexOfOperator = s.indexOf("+");
         if (indexOfOperator != -1) {
-            return calculate(s.substring(0, indexOfOperator), "+", s.substring(indexOfOperator));
+
+            return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator));
         } else {
             indexOfOperator = s.indexOf("*");
 
             if (indexOfOperator != -1) {
-                return calculate(s.substring(0, indexOfOperator), "*", s.substring(indexOfOperator + 1));
+                return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
             } else {
                 indexOfOperator = s.indexOf("-");
 
                 if (indexOfOperator != -1 && indexOfOperator != 0) {
-                    return calculate(s.substring(0, indexOfOperator), "-", s.substring(indexOfOperator + 1));
+                    return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
                 } else {
                     indexOfOperator = s.indexOf("/");
 
                     if (indexOfOperator != -1) {
-                        return calculate(s.substring(0, indexOfOperator), "/", s.substring(indexOfOperator + 1));
+                        return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
                     } else {
                         return Integer.parseInt(s);
                     }
@@ -29,18 +30,18 @@ public class StringCalculator {
         }
     }
 
-    private int calculate(String firstOperand, String operator, String secondOperand) {
+    private int calculate(String firstOperand, char operator, String secondOperand) {
         int firstValue = Integer.parseInt(firstOperand);
         int secondValue = Integer.parseInt(secondOperand);
 
         switch (operator) {
-            case "+":
+            case '+':
                 return firstValue + secondValue;
-            case "-":
+            case '-':
                 return firstValue - secondValue;
-            case "*":
+            case '*':
                 return firstValue * secondValue;
-            case "/":
+            case '/':
                 return firstValue / secondValue;
             default:
                 throw new IllegalArgumentException();
