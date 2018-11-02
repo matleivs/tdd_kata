@@ -18,7 +18,7 @@ public class StringCalculator {
             } else {
                 int indexOfMinus = s.indexOf("-");
 
-                if (indexOfMinus != -1 && !s.equals("-1")) {
+                if (indexOfMinus != -1 && indexOfMinus != 0) {
                     int firstOperand = Integer.parseInt(s.substring(0, indexOfMinus));
                     int secondOperand = Integer.parseInt(s.substring(indexOfMinus + 1));
                     return firstOperand - secondOperand;
