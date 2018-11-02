@@ -3,24 +3,24 @@ public class StringCalculator {
 
     public int calculate(String s) {
 
-        int indexOfPlus = s.indexOf("+");
-        if (indexOfPlus != -1) {
-            return calculate(s.substring(0, indexOfPlus), "+", s.substring(indexOfPlus));
+        int indexOfOperator = s.indexOf("+");
+        if (indexOfOperator != -1) {
+            return calculate(s.substring(0, indexOfOperator), "+", s.substring(indexOfOperator));
         } else {
-            int indexOfStar = s.indexOf("*");
+            indexOfOperator = s.indexOf("*");
 
-            if (indexOfStar != -1) {
-                return calculate(s.substring(0, indexOfStar), "*", s.substring(indexOfStar + 1));
+            if (indexOfOperator != -1) {
+                return calculate(s.substring(0, indexOfOperator), "*", s.substring(indexOfOperator + 1));
             } else {
-                int indexOfMinus = s.indexOf("-");
+                indexOfOperator = s.indexOf("-");
 
-                if (indexOfMinus != -1 && indexOfMinus != 0) {
-                    return calculate(s.substring(0, indexOfMinus), "-", s.substring(indexOfMinus + 1));
+                if (indexOfOperator != -1 && indexOfOperator != 0) {
+                    return calculate(s.substring(0, indexOfOperator), "-", s.substring(indexOfOperator + 1));
                 } else {
-                    int indexOfSlash = s.indexOf("/");
+                    indexOfOperator = s.indexOf("/");
 
-                    if (indexOfSlash != -1) {
-                        return calculate(s.substring(0, indexOfSlash), "/", s.substring(indexOfSlash + 1));
+                    if (indexOfOperator != -1) {
+                        return calculate(s.substring(0, indexOfOperator), "/", s.substring(indexOfOperator + 1));
                     } else {
                         return Integer.parseInt(s);
                     }
