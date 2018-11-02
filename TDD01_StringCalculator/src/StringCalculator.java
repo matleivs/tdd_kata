@@ -5,30 +5,22 @@ public class StringCalculator {
 
         int indexOfPlus = s.indexOf("+");
         if (indexOfPlus != -1) {
-            int firstOperand = Integer.parseInt(s.substring(0, indexOfPlus));
-            int secondOperand = Integer.parseInt(s.substring(indexOfPlus));
-            return firstOperand + secondOperand;
+            return calculate(s.substring(0, indexOfPlus), "+", s.substring(indexOfPlus));
         } else {
             int indexOfStar = s.indexOf("*");
 
             if (indexOfStar != -1) {
-                int firstOperand = Integer.parseInt(s.substring(0, indexOfStar));
-                int secondOperand = Integer.parseInt(s.substring(indexOfStar + 1));
-                return firstOperand * secondOperand;
+                return calculate(s.substring(0, indexOfStar), "*", s.substring(indexOfStar + 1));
             } else {
                 int indexOfMinus = s.indexOf("-");
 
                 if (indexOfMinus != -1 && indexOfMinus != 0) {
-                    int firstOperand = Integer.parseInt(s.substring(0, indexOfMinus));
-                    int secondOperand = Integer.parseInt(s.substring(indexOfMinus + 1));
-                    return firstOperand - secondOperand;
+                    return calculate(s.substring(0, indexOfMinus), "-", s.substring(indexOfMinus + 1));
                 } else {
                     int indexOfSlash = s.indexOf("/");
 
                     if (indexOfSlash != -1) {
-                        int firstOperand = Integer.parseInt(s.substring(0, indexOfSlash));
-                        int secondOperand = Integer.parseInt(s.substring(indexOfSlash + 1));
-                        return firstOperand / secondOperand;
+                        return calculate(s.substring(0, indexOfSlash), "/", s.substring(indexOfSlash + 1));
                     } else {
                         return Integer.parseInt(s);
                     }
@@ -36,4 +28,23 @@ public class StringCalculator {
             }
         }
     }
+
+    private int calculate(String firstOperand, String operator, String secondOperand) {
+        int firstValue = Integer.parseInt(firstOperand);
+        int secondValue = Integer.parseInt(secondOperand);
+
+        switch (operator) {
+            case "+":
+                return firstValue + secondValue;
+            case "-":
+                return firstValue - secondValue;
+            case "*":
+                return firstValue * secondValue;
+            case "/":
+                return firstValue / secondValue;
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
 }
