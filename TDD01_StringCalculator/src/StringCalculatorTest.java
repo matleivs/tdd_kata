@@ -25,6 +25,22 @@ public class StringCalculatorTest {
         new StringCalculator().calculate("abc");
     }
 
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_input_secondOperandIsMissing_throw_illegalArgumentException() {
+        new StringCalculator().calculate("1+");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_input_firstOperandIsMissing_throw_illegalArgumentException() {
+        new StringCalculator().calculate("+1");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_input_firstAndSecondOperandsAreMissing_throw_illegalArgumentException() {
+        new StringCalculator().calculate("+");
+    }
+
     @Test
     public void test_input_zero_return_0() {
         test_calculate("0", 0);
