@@ -37,11 +37,16 @@ public class StringCalculatorTest {
         test_calculate("-1", -1);
     }
 
-
     @Test
     public void test_input_2digits_return_2digits() {
         test_calculate("12", 12);
     }
+
+    @Test
+    public void test_input_0plus0_return_0() {
+        test_calculate("0+0", 0);
+    }
+
 
     private void test_calculate(String input, int expected) {
         int actual = new StringCalculator().calculate(input);
