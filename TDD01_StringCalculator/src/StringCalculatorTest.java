@@ -11,9 +11,6 @@ import org.junit.Test;
  * <p>
  * <p>
  * <p>
- * 0+0 -> 0
- * 0+1 -> 1
- * 1+0 -> 1
  * 1+0 -> 0+1
  * 0+-1 -> -1
  * -1+0 -> -1
@@ -50,6 +47,11 @@ public class StringCalculatorTest {
     @Test
     public void test_input_0plus1_return_1() {
         test_calculate("0+1", 1);
+    }
+
+    @Test
+    public void test_input_1plus0_return_1() {
+        test_calculate("1+0", 1);
     }
 
     private void test_calculate(String input, int expected) {
