@@ -76,6 +76,12 @@ public class StringCalculatorTest {
         test_calculate("1+0", 1);
     }
 
+    @Test
+    public void test_input_1multiply1_return_1() {
+        test_calculate("1*1", 1);
+    }
+
+
     private void test_calculate(String input, int expected) {
         int actual = new StringCalculator().calculate(input);
 
