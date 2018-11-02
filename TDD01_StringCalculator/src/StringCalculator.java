@@ -23,7 +23,15 @@ public class StringCalculator {
                     int secondOperand = Integer.parseInt(s.substring(indexOfMinus + 1));
                     return firstOperand - secondOperand;
                 } else {
-                    return Integer.parseInt(s);
+                    int indexOfSlash = s.indexOf("/");
+
+                    if (indexOfSlash != -1) {
+                        int firstOperand = Integer.parseInt(s.substring(0, indexOfSlash));
+                        int secondOperand = Integer.parseInt(s.substring(indexOfSlash + 1));
+                        return firstOperand - secondOperand;
+                    } else {
+                        return Integer.parseInt(s);
+                    }
                 }
             }
         }
