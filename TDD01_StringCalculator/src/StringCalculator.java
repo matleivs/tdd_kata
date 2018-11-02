@@ -16,11 +16,15 @@ public class StringCalculator {
                 }
             }
         }
-
-        return calculate(s.substring(0, indexOfOperator), s.charAt(indexOfOperator), s.substring(indexOfOperator + 1));
+        return calculate(s, indexOfOperator);
     }
 
-    private int calculate(String firstOperand, char operator, String secondOperand) {
+    private int calculate(String input, int indexOfOperator) {
+        char operator = input.charAt(indexOfOperator);
+
+        String firstOperand = input.substring(0, indexOfOperator);
+        String secondOperand = input.substring(indexOfOperator + 1);
+
         int firstValue = Integer.parseInt(firstOperand);
         int secondValue = Integer.parseInt(secondOperand);
 
