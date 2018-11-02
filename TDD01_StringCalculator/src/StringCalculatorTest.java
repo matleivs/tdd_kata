@@ -8,6 +8,7 @@ import org.junit.Test;
  * das Ergebnis der darin erhaltenen Rechnung zurückgibt.
  * Unterstützt werden sollen die vier Grundrechenarten (+,-,/,*) für Integerwerte (Annahme: Werte < 0 inkl.).
  * Die Signatur sähe so aus: Number calculate(String expression)
+ * Annahme: bei ungültiger Eingabe -> throw IllegalArgumentException
  * <p>
  * <p>
  * <p>
@@ -18,6 +19,11 @@ import org.junit.Test;
  */
 public class StringCalculatorTest {
 
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_invalid_input_throw_illegalArgumentException() {
+        new StringCalculator().calculate("abc");
+    }
 
     @Test
     public void test_input_zero_return_0() {
