@@ -10,8 +10,6 @@ import org.junit.Test;
  * Die Signatur sähe so aus: Number calculate(String expression)
  * <p>
  * <p>
- * 12 -> 12
- * -23 -> -23
  * <p>
  * 0+0 -> 0
  * 0+1 -> 1
