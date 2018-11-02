@@ -47,6 +47,10 @@ public class StringCalculatorTest {
         test_calculate("0+0", 0);
     }
 
+    @Test
+    public void test_input_0plus1_return_1() {
+        test_calculate("0+1", 1);
+    }
 
     private void test_calculate(String input, int expected) {
         int actual = new StringCalculator().calculate(input);
